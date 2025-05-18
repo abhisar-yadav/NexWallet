@@ -91,6 +91,128 @@ JWT_SECRET=your-secret-key
 The API is documented using Swagger UI. Access it at:
 - http://localhost:3000/api-docs
 
+## API Endpoints
+### Authentication
+#### Register a User
+- **Endpoint:** `POST /api/auth/register`
+- **Body:**
+  ```json
+  {
+    "username": "string",
+    "password": "string"
+  }
+  ```
+- **Response:** "Message": "User registered"
+
+#### Login
+- **Endpoint:** `POST /api/auth/login`
+- **Body:**
+  ```json
+  {
+    "username": "string",
+    "password": "string"
+  }
+  ```
+- **Response:** JWT token
+
+### Wallet Operations
+#### Deposit Funds
+- **Endpoint:** `POST /api/wallet/deposit`
+- **Headers:** `Authorization: Bearer YOUR_JWT_TOKEN`
+- **Body:**
+  ```json
+  {
+    "amount": 200,
+    "currency": "EUR"
+  }
+  ```
+- **Response:** Transaction details
+
+#### Withdraw Funds
+- **Endpoint:** `POST /api/wallet/withdraw`
+- **Headers:** `Authorization: Bearer YOUR_JWT_TOKEN`
+- **Body:**
+  ```json
+  {
+    "amount": 60,
+    "currency": "GBP"
+  }
+  
+  ```
+- **Response:** Transaction details
+
+#### Transfer Funds
+- **Endpoint:** `POST /api/wallet/transfer`
+- **Headers:** `Authorization: Bearer YOUR_JWT_TOKEN`
+- **Body:**
+  ```json
+  {
+    "toUsername": "john_doe",
+    "amount": 120,
+    "currency": "INR"
+  }
+  ```
+- **Response:** Transaction details
+
+#### Get Transaction History
+- **Endpoint:** `GET /api/wallet/history`
+- **Headers:** `Authorization: Bearer YOUR_JWT_TOKEN`
+
+
+
+### Admin Endpoints
+#### Get Flagged Transactions
+- **Endpoint:** `GET /api/admin/flagged`
+- **Headers:** `Authorization: Bearer YOUR_ADMIN_JWT_TOKEN`
+- **Response:** List of flagged transactions
+
+
+#### View total balances across all users per currency
+- **Endpoint:** `GET /api/admin/total-balances`
+- **Headers:** `Authorization: Bearer YOUR_ADMIN_JWT_TOKEN`
+- **Response:** Total balances per currency
+  
+#### Get Top Users
+- **Endpoint:** `GET /api/admin/top-users`
+- **Headers:** `Authorization: Bearer YOUR_ADMIN_JWT_TOKEN`
+- **Response:** Top users by wallet 
+
+#### Soft-delete a user account
+- **Endpoint:** `DELETE /api/admin/user/$username`
+- **Headers:** `Authorization: Bearer YOUR_ADMIN_JWT_TOKEN`
+- **Response:** Message - User soft-deleted or User not found based on input.
+
+
+#### Soft-delete a transaction
+- **Endpoint:** `DELETE /api/admin/transaction/$id`
+- **Headers:** `Authorization: Bearer YOUR_ADMIN_JWT_TOKEN`
+- **Response:** Message - Transaction soft-deleted or Transaction not found based on input.
+
+
+
+
+## Error Handling
+
+The API uses standard HTTP status codes and returns error responses in the following format:
+
+```json
+{
+  "status": "error",
+  "message": "Error description",
+ 
+}
+```
+
+Common status codes:
+- 200: Success
+- 201: Created
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+
 ## Mock Email Notifications
 
 - Email notifications are simulated through Nodemailer.
