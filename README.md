@@ -89,7 +89,7 @@ JWT_SECRET=your-secret-key
 ## API Documentation
 
 The API is documented using Swagger UI. Access it at:
-- http://localhost:3000/api-docs
+- http://localhost:5000/api-docs
 
 ## API Endpoints
 ### Authentication
