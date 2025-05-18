@@ -90,3 +90,16 @@ JWT_SECRET=your-secret-key
 
 The API is documented using Swagger UI. Access it at:
 - http://localhost:3000/api-docs
+
+## Mock Email Notifications
+
+- Email notifications are simulated through Nodemailer.
+
+- The email content will be displayed directly in the console output.
+
+## Automated Fraud Check
+A background fraud check is scheduled to execute every day at 4:00 AM using node-cron. It identifies and flags:
+
+- Any withdrawal exceeding $50000
+
+- Users making 10 or more transfers in a 24-hour period
