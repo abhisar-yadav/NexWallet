@@ -12,7 +12,7 @@ const runFraudScan = async () => {
     let shouldFlag = false;
 
 
-    if (tx.type === "withdraw" && tx.currency === "USD" && tx.amount > 1000) {
+    if (tx.type === "withdraw" && tx.currency === "USD" && tx.amount > 50000) {
       tx.flagged = true;
       tx.reason = "Daily scan: Large USD withdrawal";
       shouldFlag = true;
