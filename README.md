@@ -64,8 +64,6 @@ Developed a robust digital wallet system that allows users to register, deposit 
    ```sh
    cp .env.example .env
    # Edit .env with your configuration
-   #MONGO_URI=mongodb+srv://your-atlas-url
-   #JWT_SECRET=your-secret-key
    ```
 
 5. Start the application:
