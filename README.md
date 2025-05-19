@@ -2,6 +2,8 @@
 
 Developed a robust digital wallet system that allows users to register, deposit and withdraw virtual cash, and transfer funds to other users. The backend handles transaction processing, includes session security, and integrates basic fraud detection features such as rate limiting and anomaly detection.
 
+![Postman](./assets/NexWallet-Demo.gif)
+
 ## Features
 
 - **User Authentication & Session Management**
