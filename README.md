@@ -13,34 +13,31 @@ Developed a robust digital wallet system that allows users to register, deposit 
 - **Wallet Operations**
   - Deposit and withdraw virtual cash
   - Transfer funds between users
-  - Transaction history with pagination
+  - Transaction history per user
   - Multiple currency support
   - Real-time balance updates
 
 - **Transaction Processing & Validation**
   - Atomic transactions with MongoDB transactions
-  - Balance validation and overdraft protection
-  - Transaction status tracking (PENDING, COMPLETED, FAILED)
-  - Transaction rollback on failure
+  - Added validations (e.g., prevent overdrafts, negative deposits, or invalid transfers)
 
 - **Fraud Detection**
   - Rule-based fraud detection system
-  - Suspicious pattern detection
-  - Transaction flagging and monitoring
-  - Daily fraud reports
-  - Risk scoring for transactions
+  - Suspicious withdrawals
+  - Transaction flagging and monitoring based on time period
 
 - **Admin & Reporting**
   - User management and status control
-  - Transaction monitoring and flagging
-  - System statistics and analytics
+  - View Top Users by balance
+  - Total balance across all users per currency
   - Fraud reports and risk assessment
   - User activity tracking
- 
- - **Additional Features**
-  - Create a scheduled job for daily fraud scans and reporting.
-  - Implement soft delete for accounts and transactions
-  - Add email alerts for large or suspicious transactions (mocked)
+
+ - **Bonus Features**
+   - Created a scheduled job for daily fraud scans and reporting.
+   - Implemented soft delete for accounts and transactions
+   - Added email alerts for large or suspicious transactions (mocked)
+
 
 ## Tech Stack
 
